@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="pt-br" manifest="appcache.manifest">
+<head>
+    <meta charset="utf-8">
+    <title>Shopping</title>
+    <meta name="description" content="WebApp de exemplo">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/estilos.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+<div class="current-page">
+
+
+<main class="pagar">
+
+<div class="topo-fixo z-depth-1">
+    <div class="valign-wrapper amber darken-2 white-text">
+		<div>
+			<a href="index.html"><i class="material-icons waves-effect waves-light waves-circle">arrow_back</i></a>
+		</div>
+
+        <h5 class="titulo">Pagar Estacionamento</h5>
+
+        <div>
+            <i class="material-icons waves-effect waves-light
+                      waves-circle dropdown-button"
+                data-activates="submenu-pagar" data-gutter="5"
+                data-constrainwidth="false">
+                    more_vert
+            </i>
+
+            <ul id="submenu-pagar" class="dropdown-content">
+            	<li><a class="black-text" href="lojas.html">Lojas</a></li>
+            	<li><a class="black-text" href="index.html">Entrada</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="row card-panel">
+	<form class="col s12" method="post">
+
+		<div class="row">
+			<div class="input-field col s8">
+				<input id="codigo" type="number" class="validate">
+				<label for="codigo">Número do Ticket</label>
+			</div>
+
+			<div class="col s2">
+				<a class="waves-effect btn-floating code-scan orange modal-trigger" href="#scan">
+					<i class="material-icons">camera</i>
+				</a>
+			</div>
+
+			<div class="hide-if-payment-request-api-available">
+				<div class="input-field col s12">
+					<input id="cardnumber" type="text" class="validate" autocomplete="cc-number">
+					<label for="cardnumber">Cartão de crédito</label>
+				</div>
+
+				<div class="input-field col s4">
+					<input id="exp-date" type="text" class="validate" autocomplete="cc-exp">
+					<label for="exp-date">Vencimento</label>
+				</div>
+				<div class="input-field col s3">
+					<input id="cvc" type="text" class="validate" autocomplete="cc-csc">
+					<label for="cvc">Código</label>
+				</div>
+			</div>
+		</div>
+		
+
+		<button class="btn waves-effect waves-light">Pagar</button>
+	</form>
+</div>
+
+<div id="scan" class="modal">
+	<div class="modal-content">
+		<h5>Escaneie o Ticket</h5>
+		<div><button class="btn orange codetest">carregar teste</button> <button class="btn orange modal-close">fechar</button></div>
+		<div id="interactive" class="viewport"></div>
+	</div>
+</div>
+
+</main>
+
+</div><!--/.current-page-->
+
+<script src="js/vendor/jquery.min.js"></script>
+<script src="js/vendor/materialize-0.97.0.min.js"></script>
+<script src="js/spa.js"></script>
+<script src="js/main.js"></script>
+<script src="js/install.js"></script>
+
+<script src="js/pagamento.js"></script>
+<script src="js/vendor/quagga.min.js"></script>
+<script src="js/barcode.js"></script>
+
+</body>
+</html>
+
